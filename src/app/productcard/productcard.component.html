@@ -1,0 +1,45 @@
+
+  
+<div class="card mb-3 bg-light text-dark" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="product.image" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text text-muted">{{product.description}}</p>
+
+     
+
+<!-- <div   class="card-text text-success"  
+   *ngif="product.count == 0 ;then block1 
+else product.count>0 ;then block2">
+
+<ng-template #block1> <p>instock</p>   </ng-template>
+<ng-template #block2>  <p>outstock</p>  </ng-template>
+
+</div> -->
+<!-- 
+<ng-template [ngIf]="product.count == 0 " [ngIfElse]="loading">
+  <div class="hero-list  text-success">
+ instock
+  </div>
+ </ng-template>
+ 
+ <ng-template #loading>
+  <div class="card-text text-success">out of stock</div>
+ </ng-template> -->
+
+
+<!-- <div *ngIf="product.count==0"  class="card-text text-success" >instock</div>
+<div *ngIf="product.count>0"  class="card-text text-success" >outstock</div> -->
+<p class="card-text "><small class="text-success">{{ product.category}}</small></p>
+          <p class="card-text "><small class="text-danger">{{ product.price | currency:"EGP"}}</small></p>
+          <button type="button" class="btn btn-outline-info"    (click)="redirectToDetails()" >details</button>
+          <button type="button" class="btn btn-info m-2" (click)="addTocard()"> add To Card</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  

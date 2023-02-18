@@ -1,0 +1,19 @@
+
+  <td> <img [src]="data.image" width="150px" > </td>
+    <td scope="row">{{data.id}}</td>
+    <td>{{data.title}}</td>
+    <td>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <button type="button" class="btn btn-success  d-flex" (click)="increaseCounter() ">+</button>
+        <button type="button" class="btn btn-outline-light  ">
+          {{Itemcounter}}
+        </button>
+        <button type="button" class="btn btn-info d-flex" (click)="decreaseCounter()">-</button>
+     </div>
+    </td>
+    <td>{{data.price}}</td>
+
+
+
+
+

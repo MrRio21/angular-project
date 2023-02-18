@@ -1,0 +1,59 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand fs-3">  Your Product </a>
+  <form class="form-inline">
+
+    <button type="button" class="btn btn-info position-relative">
+     <h4>Price</h4> 
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        <h6 (change)="receiveFromChild($event)" >
+          {{Tprice}} L.E </h6>
+       
+      </span>
+    </button>
+
+    <button type="button" class="btn btn-info position-relative mx-4">
+      <h5>product Number </h5> 
+       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+         <h6 (change)="receiveFromChild($event)" >
+          {{TProductCount}} </h6>
+       
+       </span>
+     </button>
+       
+  </form>
+</nav>
+
+
+
+
+<div class="container mt-5 table-responsive">
+  <table class="table table-hover table-dark border-info">
+    <thead>
+      <tr>
+        <th scope="col">image</th>
+        <th scope="col">id</th>
+        <th scope="col">Title</th>
+        <th scope="col">counter</th>
+        <th scope="col">price</th>
+     
+      </tr>
+    </thead>
+    <tbody  *ngFor="let data of prductlist">
+    
+<tr >
+      <!-- generate cartViewItem  -->
+      <app-cart-view-item [data]="data"   (Itemcount)="receiveFromChild($event) "></app-cart-view-item>
+                                    
+    </tr>
+    </tbody>
+
+
+
+
+
+ 
+
+  
+
+  </table>
+</div>

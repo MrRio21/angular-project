@@ -1,0 +1,116 @@
+<section class="h-100 h-custom" style="  background-image:  linear-gradient(rgb(255, 0, 170), rgb(255, 113, 248), rgb(243, 73, 255), rgb(255, 96, 228), rgba(255, 30, 187, 0.372));;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+              alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+       
+              <form action="" (ngSubmit)="submitForm()" [formGroup]="RegForm" >
+                <h2>Register Form</h2>
+
+
+                <div *ngIf="
+                RegForm.dirty && RegForm.invalid ">
+                <div class="form-text text-danger" *ngIf="RegForm.errors?.['required']">
+                  This field is required
+                </div>
+              </div>
+
+
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input class="input-field" type="text" placeholder="Username"  formControlName="RegName">
+            
+                  <div *ngIf="
+                  (  RegForm.controls['RegName'].touched || RegForm.controls['RegName'].dirty ) &&
+                  RegForm.controls['RegName'].invalid
+                  ">
+                  <div class="form-text text-danger" *ngIf="RegForm.controls['RegName'].errors?.['required']">
+                    This field is required
+                  </div>
+                </div>
+                <div
+                class="form-text text-danger"
+                *ngIf="RegForm.controls['RegName'].errors?.['minlength']"
+              >
+                Minlength is 3 characters
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="RegForm.controls['RegName'].errors?.['maxlength']"
+              >
+                MaxLength is 15 characters
+              </div>
+                </div>
+              
+                <div class="input-container">
+                  <i class="fa fa-envelope icon"></i>
+                  <input class="input-field" type="email" placeholder="Email"  formControlName="RegEmail">
+
+                  <div *ngIf="
+                  (  RegForm.controls['RegEmail'].touched || RegForm.controls['RegEmail'].dirty ) &&
+                  RegForm.controls['RegEmail'].invalid
+                                                                         ">
+                          <div class="form-text text-danger" *ngIf="RegForm.controls['RegEmail'].errors?.['required']">
+                      This field is required
+                            </div>
+                  </div>
+                  <div *ngIf="
+                  (  RegForm.controls['RegEmail'].touched || RegForm.controls['RegEmail'].dirty ) &&
+                  RegForm.controls['RegEmail'].invalid
+                                                                         ">
+                          <div class="form-text text-danger" *ngIf="RegForm.controls['RegEmail'].errors?.['pattern']">
+                      invalid email
+                            </div>
+                  </div>
+            
+                
+                </div>
+              
+                <div class="input-container">
+                  <i class="fa fa-key icon">password</i>
+                  <input class="input-field" type="password" placeholder="Password" formControlName="Regpass">
+
+                  
+                  <div *ngIf="
+                 (  RegForm.controls['Regpass'].touched || RegForm.controls['Regpass'].dirty ) &&
+                  RegForm.controls['Regpass'].invalid
+                   ">
+                          <div class="form-text text-danger" *ngIf="RegForm.controls['Regpass'].errors?.['Regpass']">
+                      This field is required
+                            </div>
+                  </div>
+                  <div *ngIf="
+                  (  RegForm.controls['Regpass'].touched || RegForm.controls['Regpass'].dirty ) &&
+                  RegForm.controls['Regpass'].invalid
+                                                                         ">
+                          <div class="form-text text-danger" *ngIf="RegForm.controls['Regpass'].errors?.['pattern']">
+                      invalid Regpass
+                            </div>
+                  </div>
+
+                </div>
+
+                <div class="input-container">
+                  <i class="fa fa-key icon">confirm password</i>
+                  <input class="input-field" type="password" placeholder="confirm password" >
+
+
+
+
+
+
+                </div>
+              
+                <button type="submit" class="btn" [disabled]="RegForm.invalid" >Register</button>
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
